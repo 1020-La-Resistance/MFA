@@ -10,6 +10,12 @@ let project = Project(
         product: .app,
         bundleId: "1020MFA",
         sources: ["Sources/**"],
-        resources: ["Resources/**"]
+        resources: ["Resources/**"],
+        dependencies: [
+            .project(target: "HomeFeature",
+                     path: .relativeToRoot("Features/Home")),
+            .project(target: "HomeInterface",
+                     path: .relativeToRoot("Features/Home"))
+        ]
     )]
 )
