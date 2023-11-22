@@ -9,13 +9,14 @@ let project = Project(
         platform: .iOS,
         product: .app,
         bundleId: "1020MFA",
+		infoPlist: .extendingDefault(with: ["UILaunchScreen": ""]),
         sources: ["Sources/**"],
         resources: ["Resources/**"],
         dependencies: [
-            .project(target: "HomeFeature",
-                     path: .relativeToRoot("Features/Home")),
-            .project(target: "HomeInterface",
-                     path: .relativeToRoot("Features/Home"))
+            .project(target: "CounterFeature",
+                     path: .relativeToRoot("Features/Counter")),
+            .project(target: "CounterInterface",
+                     path: .relativeToRoot("Features/Counter"))
         ]
     )]
 )
