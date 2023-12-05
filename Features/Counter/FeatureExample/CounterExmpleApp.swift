@@ -6,7 +6,7 @@ import CounterFeature
 struct CounterExmpleApp: App {
 	var body: some Scene {
 		WindowGroup {
-			CounterViewFactoryImplement().makeView(count: 0)
+			CounterViewFactoryImplement().makeView()
 		}
 	}
 }

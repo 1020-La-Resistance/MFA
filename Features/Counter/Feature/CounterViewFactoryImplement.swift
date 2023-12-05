@@ -11,11 +11,9 @@ import SwiftUI
 
 public class CounterViewFactoryImplement: CounterFactory {
 	
-	public init() {
-		
-	}
+	public init() {}
 	
-	public func makeView(count: Int) -> some View {
-		return CounterView(viewModel: CounterViewModelTest(count: count))
+	public func makeView() -> some View {
+		return CounterView(viewModel: CounterViewModel(dataSource: CounterDataSourceImplement()))
 	}
 }

@@ -10,5 +10,5 @@ import SwiftUI
 
 public protocol CounterFactory {
 	associatedtype ViewType: View
-	func makeView(count: Int) -> ViewType
+	func makeView() -> ViewType
 }

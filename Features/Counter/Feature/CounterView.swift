@@ -4,9 +4,9 @@ import SwiftUI
 
 struct CounterView: View {
 
-	@StateObject var viewModel: CounterViewModelTest
+	@StateObject var viewModel: CounterViewModel
 	
-	init(viewModel: CounterViewModelTest) {
+	init(viewModel: CounterViewModel) {
 		_viewModel = StateObject(wrappedValue: viewModel)
 	}
 	
@@ -18,7 +18,7 @@ struct CounterView: View {
 				Text("up")
 			}
 			
-			Text("\(viewModel.countTest)")
+			Text("\(viewModel.countValue)")
 			
 			Button {
 				viewModel.decreaseCount()

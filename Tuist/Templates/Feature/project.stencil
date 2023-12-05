@@ -1,0 +1,59 @@
+import ProjectDescription
+import ProjectDescriptionHelpers
+import MyPlugin
+
+let project = Project(
+    name: "{{ name }}Feature",
+    targets: [
+        Target(
+            name: "{{ name }}Example",
+            platform: .iOS,
+            product: .app,
+            bundleId: "{{ name }}ExampleApp",
+            infoPlist: .extendingDefault(with: ["UILaunchScreen": ""]),
+            sources: ["FeatureExample/**"],
+            dependencies: [
+                .target(name: "{{ name }}Feature"),
+                .target(name: "{{ name }}Testing")
+            ]
+        ),
+        Target(
+            name: "{{ name }}Interface",
+            platform: .iOS,
+            product: .staticLibrary,
+            bundleId: "",
+            sources: ["FeatureInterface/**"]
+        ),
+        Target(
+            name: "{{ name }}Feature",
+            platform: .iOS,
+            product: .staticLibrary,
+            bundleId: "",
+            sources: ["Feature/**"],
+            dependencies: [
+                .target(name: "{{ name }}Interface")
+            ]
+        ),
+        Target(
+            name: "{{ name }}Tests",
+            platform: .iOS,
+            product: .unitTests,
+            bundleId: "",
+            sources: ["FeatureTests/**"],
+            dependencies: [
+                .target(name: "{{ name }}Feature"),
+                .target(name: "{{ name }}Testing")
+            ]
+        ),
+        Target(
+            name: "{{ name }}Testing",
+            platform: .iOS,
+            product: .staticLibrary,
+            bundleId: "",
+            sources: ["FeatureTesting/**"],
+            dependencies: [
+                .target(name: "{{ name }}Interface")
+            ]
+        )
+    ]
+)
