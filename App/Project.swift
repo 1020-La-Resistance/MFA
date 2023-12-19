@@ -16,7 +16,11 @@ let project = Project(
             .project(target: "CounterFeature",
                      path: .relativeToRoot("Features/Counter")),
             .project(target: "CounterInterface",
-                     path: .relativeToRoot("Features/Counter"))
+					 path: .relativeToRoot("Features/Counter")),
+			.project(target: "MaximFeature",
+					 path: .relativeToRoot("Features/Maxim")),
+			.project(target: "MaximInterface",
+					 path: .relativeToRoot("Features/Maxim"))
         ]
     )]
 )

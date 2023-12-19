@@ -10,6 +10,4 @@ import Foundation
 public protocol CounterDataSource {
     func fetchCount() -> Int
     func setCount(count: Int)
-//    func increaseCount()
-//    func decreaseCount()
 }

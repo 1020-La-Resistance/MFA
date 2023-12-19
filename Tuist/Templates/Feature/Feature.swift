@@ -15,17 +15,29 @@ let template = Template(
         nameAttribute,
     ],
     items: [
-//        .string(
-//            path: "Project.swift",
-//            contents: "My template contents of name \(nameAttribute)"
-//        ),
+        .string(
+            path: "Features/\(nameAttribute)/Feature/\(nameAttribute)Feature.swift",
+            contents: "//My template contents of name \(nameAttribute)"
+        ),
         .file(
             path: "Features/\(nameAttribute)/Project.swift",
             templatePath: "project.stencil"
-        ),
-//        .directory(
-//            path: "destinationFolder",
-//            sourcePath: "sourceFolder"
-//        ),
-    ]
+		),
+		.string(
+			path: "Features/\(nameAttribute)/FeatureInterface/\(nameAttribute)Interface.swift",
+			contents: "//My template contents of name \(nameAttribute)"
+		),
+		.file(
+			path: "Features/\(nameAttribute)/FeatureExample/\(nameAttribute)ExampleApp.swift",
+			templatePath: "example.stencil"
+		),
+		.string(
+			path: "Features/\(nameAttribute)/FeatureTesting/\(nameAttribute)Testing.swift",
+			contents: "//My template contents of name \(nameAttribute)"
+		),
+		.file(
+			path: "Features/\(nameAttribute)/FeatureTests/\(nameAttribute)Tests.swift",
+			templatePath: "tests.stencil"
+		)
+	]
 )

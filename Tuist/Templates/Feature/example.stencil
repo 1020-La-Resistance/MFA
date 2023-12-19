@@ -1,0 +1,14 @@
+//
+//  example.swift
+
+import SwiftUI
+import {{ name }}Feature
+
+@main
+struct {{ name }}ExampleApp: App {
+	var body: some Scene {
+		WindowGroup {
+			Text("\({{ name }})")
+		}
+	}
+}
