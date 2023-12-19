@@ -2,23 +2,21 @@
 
 import SwiftUI
 
-/*
- https://api.adviceslip.com/advice
- */
-
 struct MaximView: View {
+    
+    @StateObject var viewModel: MaximViewModel
 	
 	init (viewModel: MaximViewModel) {
-		
-		// api
+        _viewModel = StateObject(wrappedValue: viewModel)
 	}
 	
 	var body: some View {
 		VStack {
-			Text("명언 아무거나")
-			
+            Text("\(viewModel.maximValue)")
 			Button(action: {
-				
+                Task {
+                    await viewModel.fetchData()
+                }
 			}, label: {
 				Text("확인")
 			})

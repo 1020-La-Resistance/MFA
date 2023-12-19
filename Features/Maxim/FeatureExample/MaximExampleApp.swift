@@ -8,7 +8,7 @@ import MaximFeature
 struct MaximExampleApp: App {
 	var body: some Scene {
 		WindowGroup {
-			MaximView()
+            MaximViewFactoryImplement().makeView()
 		}
 	}
 }

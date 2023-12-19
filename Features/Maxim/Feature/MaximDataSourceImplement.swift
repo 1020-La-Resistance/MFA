@@ -14,9 +14,9 @@ class MaximDataSourceImplement: MaximDataSource {
 		
 		let url = "https://api.adviceslip.com/advice"
 		
-		guard let url = URL(string: url) else {
-					throw URLError(.badURL)
-				}
+        guard let url = URL(string: url) else {
+            throw URLError(.badURL)
+        }
 		
 		let (data, _) = try await URLSession.shared.data(from: url)
 		let returnData = try JSONDecoder().decode(MaximDataModel.self, from: data)
