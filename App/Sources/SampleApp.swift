@@ -7,11 +7,18 @@
 
 import SwiftUI
 
+import MainFeature
+import MainInterface
+import CounterInterface
+import CounterFeature
+
 @main
 struct SampleApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            NavigationStack {
+                MainView(counterFactory: CounterViewFactoryImplement())
+            }
         }
     }
 }

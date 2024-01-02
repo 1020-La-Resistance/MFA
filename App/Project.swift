@@ -20,7 +20,11 @@ let project = Project(
 			.project(target: "MaximFeature",
 					 path: .relativeToRoot("Features/Maxim")),
 			.project(target: "MaximInterface",
-					 path: .relativeToRoot("Features/Maxim"))
+					 path: .relativeToRoot("Features/Maxim")),
+            .project(target: "MainFeature",
+                     path: .relativeToRoot("Features/Main")),
+            .project(target: "MainInterface",
+                     path: .relativeToRoot("Features/Main"))
         ]
     )]
 )

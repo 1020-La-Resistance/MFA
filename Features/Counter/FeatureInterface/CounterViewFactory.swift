@@ -9,6 +9,5 @@ import Foundation
 import SwiftUI
 
 public protocol CounterFactory {
-	associatedtype ViewType: View
-	func makeView() -> ViewType
+    func makeView() -> AnyView
 }

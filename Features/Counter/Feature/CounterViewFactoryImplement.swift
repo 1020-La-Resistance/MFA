@@ -13,7 +13,9 @@ public class CounterViewFactoryImplement: CounterFactory {
 	
 	public init() {}
 	
-	public func makeView() -> some View {
-		return CounterView(viewModel: CounterViewModel(dataSource: CounterDataSourceImplement()))
+	public func makeView() -> AnyView {
+		return AnyView(
+            CounterView(viewModel: CounterViewModel(dataSource: CounterDataSourceImplement()))
+        )
 	}
 }
