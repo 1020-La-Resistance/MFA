@@ -8,14 +8,16 @@
 import Foundation
 import CounterInterface
 
-class CounterDataSourceImplement: CounterDataSource {
+public class CounterDataSourceImplement: CounterDataSource {
     
-    func fetchCount() -> Int {
+    public init() {}
+    
+    public func fetchCount() -> Int {
         print("Fetch ::", UserDefaults.standard.integer(forKey: "CounterValues"))
         return UserDefaults.standard.integer(forKey: "CounterValues")
     }
     
-    func setCount(count: Int) {
+    public func setCount(count: Int) {
         print(count)
         UserDefaults.standard.setValue(count, forKey: "CounterValues")
     }

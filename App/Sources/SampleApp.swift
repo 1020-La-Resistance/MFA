@@ -11,13 +11,21 @@ import MainFeature
 import MainInterface
 import CounterInterface
 import CounterFeature
+import MaximFeature
+import MaximInterface
 
 @main
 struct SampleApp: App {
     var body: some Scene {
         WindowGroup {
             NavigationStack {
-                MainView(counterFactory: CounterViewFactoryImplement())
+                MainView(
+                    mainViewModel: MainViewModel(
+                        counterDataSource: CounterDataSourceImplement(),
+                        maximDataSource: MaximDataSourceImplement()),
+                    counterFactory: CounterViewFactoryImplement(),
+                    maximFactory: MaximViewFactoryImplement()
+                )
             }
         }
     }

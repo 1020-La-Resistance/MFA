@@ -13,7 +13,7 @@ public class MaximViewFactoryImplement: MaximFactory {
 	
 	public init() {}
 	
-	public func makeView() -> some View {
-		return MaximView(viewModel: MaximViewModel(datasource: MaximDataSourceImplement()))
+	public func makeView() -> AnyView {
+		return AnyView(MaximView(viewModel: MaximViewModel(datasource: MaximDataSourceImplement())))
 	}
 }

@@ -1,20 +1,13 @@
-//
-//  MockCounterFactory.swift
-//  CounterTesting
-//
-//  Created by MinhyunCho on 1/2/24.
-//
-
-import Foundation
-import CounterInterface
 import SwiftUI
 
-public class MockCounterFactory: CounterFactory {
-    
+import MaximInterface
+
+public class MockMaximFactory: MaximFactory {
+
     public init() {}
     
     public func makeView() -> AnyView {
-        return AnyView(MockView(name: "CounterMockView"))
+        return AnyView(MockView(name: "MaximMockView"))
     }
     
     struct MockView: View {
@@ -30,4 +23,5 @@ public class MockCounterFactory: CounterFactory {
                 .border(.black, width: 1)
         }
     }
+
 }

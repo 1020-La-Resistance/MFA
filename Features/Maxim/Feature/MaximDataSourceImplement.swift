@@ -8,9 +8,13 @@
 import Foundation
 import MaximInterface
 
-class MaximDataSourceImplement: MaximDataSource {
+public class MaximDataSourceImplement: MaximDataSource {
 		
-	func fetchMaximData() async throws -> MaximDataModel {
+    public init() {
+        
+    }
+    
+	public func fetchRemoteMaximData() async throws -> MaximDataModel {
 		
 		let url = "https://api.adviceslip.com/advice"
 		
@@ -22,4 +26,13 @@ class MaximDataSourceImplement: MaximDataSource {
 		let returnData = try JSONDecoder().decode(MaximDataModel.self, from: data)
 		return returnData
 	}
+    
+    public func fetchLocalMaximData() -> String {
+        return UserDefaults.standard.string(forKey: "MaximLocalData") ?? "none"
+    }
+    
+    public func setLocalMaximData(data: String) {
+        
+        UserDefaults.standard.setValue(data, forKey: "MaximLocalData")
+    }
 }

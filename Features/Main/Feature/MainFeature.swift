@@ -1,1 +1,0 @@
-//My template contents of name Main

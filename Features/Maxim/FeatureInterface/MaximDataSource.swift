@@ -8,5 +8,7 @@
 import Foundation
 
 public protocol MaximDataSource {
-	func fetchMaximData() async throws -> MaximDataModel
+	func fetchRemoteMaximData() async throws -> MaximDataModel
+    func setLocalMaximData(data: String)
+    func fetchLocalMaximData() -> String
 }
